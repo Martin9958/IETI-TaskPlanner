@@ -78,7 +78,7 @@ const styles = theme => ({
   },
 });
 
-export class PersistentDrawerLeft extends React.Component {
+class PersistentDrawerLeft extends React.Component {
   state = {
     open: false,
   };
@@ -114,7 +114,7 @@ export class PersistentDrawerLeft extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" color="inherit" noWrap>
-              Persistent drawer
+             TodoApp
             </Typography>
           </Toolbar>
         </AppBar>
