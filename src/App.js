@@ -1,28 +1,39 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Inicio from './Components/Inicio';
+import {Login} from "./Components/Login";
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+      constructor(props) {
+            super(props);
+            localStorage.setItem('username', 'Martin9958');
+            localStorage.setItem('password', '12345');
+      }
 
-export default App;
+
+      render() {
+
+              return (
+                  <Router>
+                      <div className="App">
+
+
+                          <br/>
+                          <br/>
+
+                          {localStorage.getItem('IsLoggedIn')==="true"
+                               ? <li><Link to="/">Inicio</Link> <Route path="/todo" component={Inicio}/></li>
+                               : <li><Link to="/">Login</Link> <Route exact path="/" component={Login}/></li>
+                           }
+                      </div>
+                  </Router>
+              );
+          }
+
+
+
+}
+export default App
+
