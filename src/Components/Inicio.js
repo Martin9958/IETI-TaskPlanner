@@ -114,7 +114,7 @@ class PersistentDrawerLeft extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" color="inherit" noWrap>
-             TodoApp
+             Task Planner
             </Typography>
           </Toolbar>
         </AppBar>

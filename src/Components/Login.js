@@ -8,7 +8,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
@@ -66,12 +65,7 @@ class Login extends React.Component {
             <main className={classes.main}>
                 <CssBaseline />
                 <Paper className={classes.paper}>
-                    <Avatar className={classes.avatar}>
-                        <LockOutlinedIcon />
-                    </Avatar>
-                    <Typography component="h1" variant="h5">
-                        Log-in
-                    </Typography>
+                    <Avatar src={window.location.origin + '/images/logo.png'} size="xlarge"/>
                     <form className={classes.form}>
                         <FormControl margin="normal" required fullWidth>
                             <InputLabel htmlFor="email">Email Address</InputLabel>
@@ -93,7 +87,15 @@ class Login extends React.Component {
                             className={classes.submit}
                             onClick={this.handleSubmit}
                         >
-                            Log-in
+                            LOGIN
+                        </Button>
+                        <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            color="primary"
+                        >
+                            CREATE USER
                         </Button>
                     </form>
                 </Paper>
