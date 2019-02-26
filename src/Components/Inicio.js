@@ -23,6 +23,7 @@ import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import Avatar from "@material-ui/core/Avatar";
 import CreateIcon from '@material-ui/icons/Create';
 
+
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -82,7 +83,7 @@ const styles = theme => ({
   },
 });
 
-class PersistentDrawerLeft extends React.Component {
+export class PersistentDrawerLeft extends React.Component {
   state = {
     open: false,
   };
@@ -164,7 +165,7 @@ class PersistentDrawerLeft extends React.Component {
           <Divider />
           <List>
             {[ 'LOG OUT'].map((text, index) => (
-              <ListItem button key={text}>
+              <ListItem button key={text} >
                 <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
@@ -177,7 +178,7 @@ class PersistentDrawerLeft extends React.Component {
           })}
         >
           <div className={classes.drawerHeader} />
-         
+             
         </main>
       </div>
     );
