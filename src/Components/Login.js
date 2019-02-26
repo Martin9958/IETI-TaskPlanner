@@ -101,27 +101,26 @@ class Login extends React.Component {
         );
     }
     handleSubmit(e) {
-                //localStorage.setItem('Called', "true");
-                if(localStorage.getItem('User')===this.state.user  && localStorage.getItem('Password')===this.state.password ){
-                    localStorage.setItem('IsLoggedIn', "true");
-                }
-
-        }
-        handleUserTextChange(e) {
-            console.log(e.target.value);
-
-            this.setState({
-                user: e.target.value
-
-            });
+        if(localStorage.getItem('User')===this.state.user  && localStorage.getItem('Password')===this.state.password ){
+            localStorage.setItem('IsLoggedIn', "true");
         }
 
-        handlePasswordTextChange(e) {
-            console.log(e.target.value);
-            this.setState({
-                password: e.target.value
-            });
-        }
+    }
+    handleUserTextChange(e) {
+        console.log(e.target.value);
+
+        this.setState({
+            user: e.target.value
+
+        });
+    }
+
+    handlePasswordTextChange(e) {
+        console.log(e.target.value);
+        this.setState({
+            password: e.target.value
+        });
+    }
 }
 
 export default withStyles(styles)(Login);

@@ -161,7 +161,7 @@ export class PersistentDrawerLeft extends React.Component {
 
           </Typography>
           <Typography paragraph>
-            
+
           </Typography>
         </main>
       </div>
