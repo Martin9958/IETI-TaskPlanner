@@ -18,6 +18,10 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
+import Avatar from "@material-ui/core/Avatar";
+import CreateIcon from '@material-ui/icons/Create';
 
 const drawerWidth = 240;
 
@@ -132,18 +136,34 @@ class PersistentDrawerLeft extends React.Component {
               {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
             </IconButton>
           </div>
-          <Divider />
-          <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
+          <Divider/>
+          <List className={classes.avatarBox}>
+
+              <ListItem >
+                  <ListItemAvatar style={{
+                      left: -5,
+                  }}>
+                      <Avatar>U</Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                      primary= "Martin9958"
+                      secondary="Martin Cantor"
+                  />
+                  <ListItemSecondaryAction style={{
+                      position: 'absolute',
+                      left: 220,
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                  }}>
+
+                  </ListItemSecondaryAction>
               </ListItem>
-            ))}
+
           </List>
+          <Divider/>
           <Divider />
           <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
+            {[ 'LOG OUT'].map((text, index) => (
               <ListItem button key={text}>
                 <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                 <ListItemText primary={text} />
@@ -157,12 +177,7 @@ class PersistentDrawerLeft extends React.Component {
           })}
         >
           <div className={classes.drawerHeader} />
-          <Typography paragraph>
-
-          </Typography>
-          <Typography paragraph>
-
-          </Typography>
+         
         </main>
       </div>
     );
