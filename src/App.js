@@ -1,39 +1,38 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Inicio from './Components/Inicio';
-import {Login} from "./Components/Login";
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route} from "react-router-dom";
+import Login from "./Components/Login"
+import Inicio from "./Components/Inicio"
 
 class App extends Component {
-      constructor(props) {
-            super(props);
-            localStorage.setItem('username', 'Martin9958');
-            localStorage.setItem('password', '12345');
-      }
-
-
-      render() {
-
-              return (
-                  <Router>
-                      <div className="App">
-
-
-                          <br/>
-                          <br/>
-
-                          {localStorage.getItem('IsLoggedIn')==="true"
-                               ? <li><Link to="/">Inicio</Link> <Route path="/todo" component={Inicio}/></li>
-                               : <li><Link to="/">Login</Link> <Route exact path="/" component={Login}/></li>
-                           }
-                      </div>
-                  </Router>
-              );
-          }
+constructor(props) {
+        super(props);
+        localStorage.setItem('User',"Martin9958");
+        localStorage.setItem('Password',"12345");
 
 
 
+    }
+  render() {
+    return (
+        <Router>
+            <div>
+                <div className="App">
+                    <header className="App-header">
+
+                        {localStorage.getItem('IsLoggedIn')==="true"
+                                         ? <li> <Route exact path="/" component={Inicio}/></li>
+                                         : <li><Route exact path="/" component={Login}/></li>
+                        }
+                    </header>
+                </div>
+
+            </div>
+        </Router>
+    );
+  }
 }
-export default App
+
+export default App;
 
