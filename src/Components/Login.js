@@ -17,8 +17,8 @@ const styles = theme => ({
     main: {
         width: 'auto',
         display: 'block', // Fix IE 11 issue.
-        marginLeft: theme.spacing.unit * 3,
-        marginRight: theme.spacing.unit * 3,
+        marginLeft: theme.spacing.unit * 4,
+        marginRight: theme.spacing.unit * 4,
         [theme.breakpoints.up(400 + theme.spacing.unit * 3 * 2)]: {
             width: 400,
             marginLeft: 'auto',
@@ -65,7 +65,7 @@ class Login extends React.Component {
             <main className={classes.main}>
                 <CssBaseline />
                 <Paper className={classes.paper}>
-                    <Avatar src={window.location.origin + '/images/logo.png'} size="xlarge"/>
+                    <Avatar src={window.location.origin + '/images/logo.png'} className={classes.bigAvatar}/>
                     <form className={classes.form}>
                         <FormControl margin="normal" required fullWidth>
                             <InputLabel htmlFor="email">Email Address</InputLabel>

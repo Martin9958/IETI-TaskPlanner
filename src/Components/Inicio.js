@@ -21,7 +21,6 @@ import MailIcon from '@material-ui/icons/Mail';
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import Avatar from "@material-ui/core/Avatar";
-import CreateIcon from '@material-ui/icons/Create';
 
 
 const drawerWidth = 240;
@@ -96,6 +95,13 @@ export class PersistentDrawerLeft extends React.Component {
     this.setState({ open: false });
   };
 
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleLogout.bind(this);
+
+
+  }
+
   render() {
     const { classes, theme } = this.props;
     const { open } = this.state;
@@ -165,7 +171,7 @@ export class PersistentDrawerLeft extends React.Component {
           <Divider />
           <List>
             {[ 'LOG OUT'].map((text, index) => (
-              <ListItem button key={text} >
+              <ListItem button key={text} onClick={this.handleLogout}>
                 <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
@@ -183,6 +189,14 @@ export class PersistentDrawerLeft extends React.Component {
       </div>
     );
   }
+
+  handleLogout(e) {
+    //localStorage.setItem('Called', "true");
+    localStorage.setItem('IsLoggedIn', "false");
+    window.location.reload(false);
+
+  }
+
 }
 
 PersistentDrawerLeft.propTypes = {
